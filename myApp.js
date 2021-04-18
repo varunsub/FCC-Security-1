@@ -5,6 +5,7 @@ const helmet = require('helmet');
 module.exports = app;
 var api = require('./server.js');
 app.use(helmet());
+app.use(helmet.hidePoweredBy());
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 app.use('/_api', api);
